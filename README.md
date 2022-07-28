@@ -18,13 +18,13 @@ $ npm install
 
 ### Простой файл
 ```console
-$ npm run start 1000 5000 file.csv
+$ node index.js 1000 5000 file.csv
 ```
 
 #### Пример
 
 ```console
-$ npm run start 4 10 input.csv
+$ node index.js 4 10 input.csv
 ```
 
 input.csv
@@ -59,11 +59,11 @@ output.txt
 
 ### Файл с колонками
 ```console
-$ npm run start 1000 5000 file.csv Колонка1
+$ node index.js 1000 5000 file.csv Колонка1
 ```
 
 ## Параметры
 
 ```code
-$ npm run start {{с какой строки}} {{по какую строку}} {{путь до файла}} {{название колонки}}
+$ node index.js {{с какой строки}} {{по какую строку}} {{путь до файла}} {{название колонки}}
 ```
