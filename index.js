@@ -1,6 +1,21 @@
 const fs = require('fs');
 const lineReader = require('line-reader');
 
+const log = (inputFile, start, end) => {
+    const logFile = 'log.txt';
+
+    fs.open(logFile,  'w', (error) => {
+        if(error) throw error;
+    });
+
+    fs.appendFile(
+        logFile,
+        `${new Date()} - Имя файла ${inputFile}, с ${start} по ${end} строки`,
+        (err) => { if(err) throw err; }
+    );
+
+};
+
 const start = (start, end, inputFile, colName) => {
     let index = 0;
     let colIndex = 0;
@@ -50,6 +65,7 @@ const start = (start, end, inputFile, colName) => {
 
         if (endLine || index === end+1) {
             writeStream.end();
+            log(inputFile, start, end);
             console.log('Файл успешно обработан');
             cb(false);
         } else {
